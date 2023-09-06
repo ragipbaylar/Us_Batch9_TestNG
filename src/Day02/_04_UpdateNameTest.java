@@ -24,7 +24,7 @@ public class _04_UpdateNameTest extends DriverClass {
         editName("Michael");
     }
 
-    void editName(String username){
+    void editName(String username) {
         WebElement editAccount = driver.findElement(By.cssSelector("div[class=\"list-group\"]>a:nth-child(2)"));
         editAccount.click();
 
