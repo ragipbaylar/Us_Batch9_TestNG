@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Test with Smoke group">
+        <groups>
+            <run>
+                <include name="Smoke"></include> <!--Runs only the tests with Smoke group name-->
+            </run>
+        </groups>
+        <classes>
+            <class name="Day04._03_Groups"></class>
+        </classes>
+    </test>
+
+    <test name="Test with Regression group">
+        <groups>
+            <run>
+                <include name="Regression"></include> <!--Runs only the tests with Regression group name-->
+            </run>
+        </groups>
+        <classes>
+            <class name="Day04._03_Groups"></class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Test without Smoke group">
+
+        <groups>
+            <run>
+                <exclude name="Smoke"></exclude> <!--Runs only the tests without Smoke group name-->
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Day04._03_Groups"></class>
+        </classes>
+    </test>
+</suite>
