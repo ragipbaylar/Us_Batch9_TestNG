@@ -22,7 +22,7 @@ public class _03_AddressFunction extends DriverClass {
      * Write 3 different tests for add, edit and delete address
      */
 
-    @Test
+    @Test(groups = "MyGroup") // We also added this test because edit and delete depend on this one
     void addAddress() {
         WebElement addressBook = driver.findElement(By.xpath("(//a[text()='Address Book'])[1]"));
         addressBook.click();
@@ -63,7 +63,7 @@ public class _03_AddressFunction extends DriverClass {
         Assert.assertTrue(successMessage.getText().contains("successfully added"));
     }
 
-    @Test(dependsOnMethods = "addAddress")
+    @Test(dependsOnMethods = "addAddress", groups = "MyGroup")
     void editAddress() {
 
         WebElement editButton = driver.findElement(By.xpath("//a[text()='Edit']"));
@@ -91,7 +91,7 @@ public class _03_AddressFunction extends DriverClass {
         Assert.assertTrue(successMessage.getText().contains("successfully updated"));
     }
 
-    @Test(dependsOnMethods = "addAddress")
+    @Test(dependsOnMethods = "addAddress", groups = "MyGroup")
     void deleteAddress() {
         WebElement deleteButton = driver.findElement(By.xpath("(//a[text()='Delete'])[2]"));
         deleteButton.click();

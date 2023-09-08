@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Contact Us Test Suit">
+    <test name="Contact Us Test">
+
+        <parameter name="message" value="We are Batch 9 and we are coming soon."></parameter>
+
+        <classes>
+            <class name="Day05._01_ContactUsTest"></class>
+        </classes>
+    </test>
+
+    <test name="Contact Us Test with multiple parameters">
+
+        <parameter name="message1" value="We are Batch 9 and we are coming soon."></parameter>
+        <parameter name="message2" value="Get ready"></parameter>
+
+        <classes>
+            <class name="Day05._01_ContactUsTest">
+                <methods>
+                    <exclude name="contactUsTest"></exclude> <!--We excluded this test because it requires a parameter named message.
+                    But we have message1 and message2-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

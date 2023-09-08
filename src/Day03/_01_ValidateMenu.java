@@ -16,7 +16,7 @@ public class _01_ValidateMenu extends DriverClass {
      * Validate that you see all menu options
      */
 
-    @Test
+    @Test(groups = "MyGroup")
     void validateMenuTest() {
         List<WebElement> menuList = driver.findElements(By.cssSelector("ul[class='nav navbar-nav']>li"));
 

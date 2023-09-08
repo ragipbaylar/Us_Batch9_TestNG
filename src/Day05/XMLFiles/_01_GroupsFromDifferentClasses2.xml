@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Groups from different classes2">
+        <groups>
+            <run>
+                <include name="MyGroup"></include>
+            </run>
+        </groups>
+       <classes>
+           <class name="Day03._03_AddressFunction"></class>
+           <class name="Day03._01_ValidateMenu"></class>
+       </classes>
+    </test>
+</suite>
