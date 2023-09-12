@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="2"> <!--We want to run 2 tests together-->
+    <test name="Specials with Firefox">
+
+        <parameter name="browserName" value="firefox"></parameter>
+
+        <classes>
+            <class name="Day06._01_SpecialsTest"></class>
+        </classes>
+    </test>
+
+
+    <test name="Specials with Edge">
+
+        <parameter name="browserName" value="edge"></parameter>
+
+        <classes>
+            <class name="Day06._01_SpecialsTest"></class>
+        </classes>
+    </test>
+</suite>
