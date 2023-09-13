@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 public class DriverClass {
-    public WebDriver driver;
+    public static WebDriver driver;
 
     @BeforeClass(alwaysRun = true) // Before Class doesn't work with groups. Because we are not running the class.
     // We are running some tests in the class. To make sure it run all the time we should add alwaysRun=true

@@ -18,7 +18,7 @@ public class _02_DataProvider {
         System.out.println("Test is ended");
     }
 
-    @DataProvider(name = "credentialsMethod")
+    @DataProvider()
     public Object[][] credentials() {
         Object[][] dataList = {
                 {"John", "qwerty"},
@@ -26,7 +26,17 @@ public class _02_DataProvider {
                 {"1234John", "1234567qwerty"},
                 {"12John345", "12qwerty345"}
         };
+        return dataList;
+    }
 
+    @DataProvider(name = "credentialsMethod")
+    public Object[][] credentials1() {
+        Object[][] dataList = {
+                {"John", "qwerty"},
+                {"John123", "qwert12345"},
+                {"1234John", "1234567qwerty"},
+                {"12John345", "12qwerty345"}
+        };
         return dataList;
     }
 

@@ -32,6 +32,8 @@ public class _01_SpecialsTest extends DriverClass {
         for (WebElement biggerElement: productList){
             WebElement oldPriceElement = biggerElement.findElement(By.cssSelector("span[class='price-old']"));
             //div[starts-with(@class,'product-layout')]//span[@class='price-old'] -> above code works exactly the same way
+            // If you are using another to locate an element never use xpath as locator. Because xpath scans the entire html document
+            // to find that element. So there is a risk of locating wrong element
 
             WebElement newPrice = biggerElement.findElement(By.cssSelector("span[class='price-new']"));
             //div[starts-with(@class,'product-layout')]//span[@class='price-new'] -> above code works exactly the same way
