@@ -1,0 +1,9 @@
+What is Logging?
+keeping track of what is going on about the software.
+
+What are Logging libraries?
+1 -> Log4J (Log for Java) -> apache group created this library
+2 -> JUL -> Java Unit Logging
+3 -> SLF4J
+4 -> Log4J2 -> version 2
+

@@ -1,5 +1,7 @@
 package Utilities;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,10 +10,10 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+
+import org.testng.ITest;
+import org.testng.ITestResult;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -39,7 +41,7 @@ public class DriverClass {
                 driver = new EdgeDriver();
                 break;
         }
-        wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         driver.manage().window().maximize();
 
@@ -76,4 +78,24 @@ public class DriverClass {
         WebElement loginButton = driver.findElement(By.cssSelector("input[value='Login']"));
         loginButton.click();
     }
+
+   public static final Logger logger = LogManager.getLogger();
+
+    @BeforeMethod
+    public void beforeMethod(ITestResult test) {
+        // All -> Trace ->Debug -> info -> warn -> error -> fatal
+//        logger.info("Test has started");
+//        logger.warn("Warn Level Message 1");
+
+        logger.info(test.getTestName()+" test has started");
+    }
+
+    @AfterMethod
+    public void afterMethod(ITestResult test) {
+//        logger.info("Test has ended");
+//        logger.warn("Warn Level Message 1");
+        logger.info(test.getName()+"has ended and the result is "+(test.getStatus()==1 ? "passed" : "failed")); // setStatus returns 1(passed) or 2(failed)
+    }
+
+
 }
