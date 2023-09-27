@@ -11,7 +11,7 @@ public class _05_PlaceOrderWithPOM extends DriverClass {
     @Test
     void placeOrderTest(){
 
-        _04_PlaceOrderElements elements = new _04_PlaceOrderElements();
+        _04_PlaceOrderElements elements = new _04_PlaceOrderElements(driver);
 
         elements.searchInput.sendKeys("ipod");
         elements.searchButton.click();

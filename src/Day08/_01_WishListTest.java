@@ -23,8 +23,8 @@ public class _01_WishListTest extends DriverClass {
     @Parameters(value = "searchKeyword")
     void wishListTest(@Optional(value = "ipod") String search) {
 
-        _04_PlaceOrderElements elements1 = new _04_PlaceOrderElements();
-        _02_WishListElements elements2 = new _02_WishListElements();
+        _04_PlaceOrderElements elements1 = new _04_PlaceOrderElements(driver);
+        _02_WishListElements elements2 = new _02_WishListElements(driver);
 
         elements1.searchInput.sendKeys(search);
         elements1.searchButton.click();

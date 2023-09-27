@@ -1,14 +1,15 @@
 package Day07;
 
 import Utilities.DriverClass;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class _04_PlaceOrderElements { // We are going to locate our elements in this class and call them when we need
 
-    public _04_PlaceOrderElements() {
-        PageFactory.initElements(DriverClass.driver, this); // initialize all elements with driver. driver.findElement(By...)
+    public _04_PlaceOrderElements(WebDriver driver) {
+        PageFactory.initElements(driver, this); // initialize all elements with driver. driver.findElement(By...)
     }
 
     @FindBy(name = "search")
